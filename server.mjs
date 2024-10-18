@@ -52,7 +52,7 @@ app.use((err, req, res, next) => {
 });
 
 // Set the port from environment variables or default to 4000
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; //change port
 
 // Start the server
 app.listen(PORT, () => {
