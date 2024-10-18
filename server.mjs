@@ -11,14 +11,8 @@ const app = express();
 // Middleware
 app.use(express.json()); // To parse incoming JSON requests
 
-// CORS setup
-app.use(cors({
-  origin: [
-    'http://127.0.0.1:5175', // Local frontend during development
-    // 'https://your-frontend-deployment-url.vercel.app' // Uncomment when using the deployed frontend
-  ],
-  credentials: true
-}));
+
+
 
 // MongoDB connection
 let isConnected = false;
