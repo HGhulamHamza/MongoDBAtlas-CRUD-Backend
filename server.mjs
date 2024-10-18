@@ -19,7 +19,7 @@ let isConnected = false;
 const connectToDatabase = async () => {
   if (!isConnected) {
     try {
-      await mongoose.connect('mongodb+srv:khawajahamza566:zQeXOZUOnx5IHmXZ@cluster0.oikbr.mongodb.net/CRUD-USER?retryWrites=true&w=majority&appName=Cluster0', {
+      await mongoose.connect(process.env.MONGODB_ATLAS_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });
