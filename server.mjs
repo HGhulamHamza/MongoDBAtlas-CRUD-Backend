@@ -11,14 +11,16 @@ const app = express();
 // Middleware
 app.use(express.json()); // To parse incoming JSON requests
 
-app.use(cors({ origin: '*' }));
-const corsConfig={
-    origin:"*",
-    credential:true,
-    methods:["GET","POST","PUT","DELETE"]
-}
+const corsConfig = {
+    origin: "*",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"]
+  };
+  
+  app.use(cors(corsConfig)); // Set CORS for all routes
+  
 app.options("",cors(corsConfig));
-app.use(cors(corsConfig));
+
 
 // MongoDB connection
 let isConnected = false;
