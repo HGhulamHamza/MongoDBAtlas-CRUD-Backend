@@ -11,15 +11,7 @@ const app = express();
 // Middleware
 app.use(express.json()); // To parse incoming JSON requests
 
-const corsConfig = {
-    origin: "*",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"]
-  };
-  
-  app.use(cors(corsConfig)); // Set CORS for all routes
-  
-app.options("",cors(corsConfig));
+
 
 
 // MongoDB connection
@@ -27,7 +19,7 @@ let isConnected = false;
 const connectToDatabase = async () => {
   if (!isConnected) {
     try {
-      await mongoose.connect(process.env.MONGODB_ATLAS_URI, {
+      await mongoose.connect('mongodb+srv:khawajahamza566:zQeXOZUOnx5IHmXZ@cluster0.oikbr.mongodb.net/CRUD-USER?retryWrites=true&w=majority&appName=Cluster0', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });
